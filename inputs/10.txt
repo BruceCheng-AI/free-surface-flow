@@ -1,0 +1,100 @@
+* the Free surface flow model	*Numerical method part 2
+* Created by Shaoxu Zheng	* Guided by Ioana Popescu
+
+### data rules
+# If the user uses character padding in the data, 
+# the output file will notify the error
+
+# We assume that all time-varying and space-varying are linearly connected,
+# instead of fitting as a curve
+
+
+
+### Time-varying h(water levels) and Q(discharge) at any of the boundaries
+
+# Upstream boundary: Q
+	Table.1 Upstream boundary
+**************************************************************
+t(time)		Q(discharge)
+**************************************************************
+0		700
+3600		750
+7200		800
+10800		725
+14400		700
+18000		750
+21600		800
+25200		725
+28800		700
+32400		750
+36000		800
+39600		725
+43200		700
+**************************************************************
+**************************************************************
+
+# Downstream boundary: Q
+	Table.2 Downstream boundary 
+**************************************************************
+t(time)		Q(discharge)
+**************************************************************
+0		625
+3600		625
+7200		625
+10800		625
+14400		625
+18000		625
+21600		625
+25200		625
+28800		625
+32400		625
+36000		625
+39600		625
+43200		625
+**************************************************************
+**************************************************************
+
+
+
+### Initial condition
+	Table.3 Initial boundary 
+**************************************************************
+x(space)	h(water level)	Q(discharge)
+**************************************************************
+0		13.8		625
+7200		13.8		625
+**************************************************************
+**************************************************************
+
+
+
+### Geometry of the cancel
+	Table.4 the data of the cancel
+**************************************************************
+variable 	meaning				data	unit
+**************************************************************
+L		channel length			7200	m
+b		constanct channel width		100	m
+S0		bed slope 			0	-
+C		Chezy resistance coefficient 	1000000	m^0.5/s
+**************************************************************
+**************************************************************
+
+
+
+### Numerical parameters
+	Table.5 the numerical parameters
+**************************************************************
+variable 	meaning 			data	unit
+**************************************************************
+t		computational time step		25	s
+T		total time			43200	s
+x		cell size			72	m
+theta		Time weighting parameter	0.8	-
+psi		Space weighting parameter 	0.5	-
+beta		coefficient			1	-
+Iter		Max no of iteration 		15	-
+Err		Convergence criteria 		0.01	-
+g		gravity 			9.8	m/s^2
+**************************************************************
+**************************************************************
